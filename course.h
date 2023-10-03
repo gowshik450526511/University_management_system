@@ -4,8 +4,6 @@
 #include<iomanip>
 #include<fstream>
 
-using namespace std;
-
 class course
 {
     char name[32],code[32];
