@@ -14,7 +14,7 @@ class course
 
     public:
 
-        void course::get_course_details(int e)
+        void get_course_details(int e)
         {
             if(e==1)
             {
@@ -49,17 +49,17 @@ class course
             }
         }
 
-    int course::get_credit() const
-    {
-        return credit;
-    }
-    
-    void course::print_course_details()
-    {
-        cout<<"\nNAME:"<<setw(15)<<name<<"\n\n";
-        cout<<"\nCODE:"<<setw(15)<<code<<"\n\n";
-        cout<<"\nCREDIT:"<<setw(15)<<credit<<"\n\n";
-    }
+        const int get_credit()
+        {
+            return credit;
+        }
+        
+        void print_course_details()
+        {
+            cout<<"\nNAME:"<<setw(15)<<name<<"\n\n";
+            cout<<"\nCODE:"<<setw(15)<<code<<"\n\n";
+            cout<<"\nCREDIT:"<<setw(15)<<credit<<"\n\n";
+        }
 
 };
 
