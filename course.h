@@ -49,7 +49,7 @@ class course
             }
         }
 
-    int course::get_credit()
+    int course::get_credit() const
     {
         return credit;
     }
