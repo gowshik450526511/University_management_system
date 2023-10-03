@@ -48,7 +48,7 @@ class course
             }
         }
 
-        const int get_credit()
+        int get_credit() const
         {
             return credit;
         }
