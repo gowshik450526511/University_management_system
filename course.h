@@ -1,12 +1,14 @@
 #pragma once
 
+#include<bits/stdc++.h>
 #include<iostream>
 #include<iomanip>
 #include<fstream>
 
 class course
 {
-    char name[32],code[32];
+    string name;
+    string code;
     int credit;
 
     public:
