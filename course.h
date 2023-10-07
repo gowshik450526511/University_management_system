@@ -53,11 +53,11 @@ class course
             return credit;
         }
         
-        void print_course_details()
+        void print_course_details() const
         {
-            cout<<"\nNAME:"<<setw(15)<<name<<"\n\n";
-            cout<<"\nCODE:"<<setw(15)<<code<<"\n\n";
-            cout<<"\nCREDIT:"<<setw(15)<<credit<<"\n\n";
+            cout << "\nNAME:" << setw(15) << name << "\n\n";
+            cout << "\nCODE:" << setw(15) << code << "\n\n";
+            cout << "\nCREDIT:" << setw(15) << credit << "\n\n";
         }
 
 };
