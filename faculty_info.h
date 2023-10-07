@@ -8,7 +8,8 @@ using namespace std;
 class faculty:public person
 {
     private:
-        string designation, dept;
+        string designation;
+        string dept;
         int salary;
 
     public:
