@@ -2,13 +2,11 @@
 
 #include<iomanip>
 
-using namespace std;
-
 class hostel
 {
     private:
 
-        char room_no[10];
+        string room_no;
         int room_fee;
         int mess_fee;
         int total_fees;
@@ -44,14 +42,18 @@ void hostel::total_fee()
     total_fees=room_fee+mess_fee;
 }
 
-void hostel::print_hostel_details()
+void hostel::print_hostel_details() const
 {
-    cout<<"\n\n\n\n######################"<<setw(15)<<"HOSTEL DETAILS"<<setw(15)<<"##################################\n\n";
-    cout<<"\n\nROOM NO:"<<setw(20)<<"ROOM FEE:"<<setw(20)<<"MESS FEE:"<<"\n\n";
-    cout<<room_no<<setw(20)<<room_fee<<setw(20)<<mess_fee<<"\n\n";
-    cout<<"\n\n\n";
-    cout<<"TOTAL FEES"<<setw(20)<<total_fees<<"\n\n";
-    cout<<"\n########################################################\n\n";
+    // Use std::format for advanced formatting
+    string output = std::format("\n\n\n\n######################{:<15}HOSTEL DETAILS{:<15}##################################\n\n", "");
+
+    output += std::format("\n\nROOM NO:{:<20}ROOM FEE:{:<20}MESS FEE:\n\n", room_no, room_fee, mess_fee);
+
+    output += std::format("\n\n\nTOTAL FEES{:<20}\n\n", total_fees);
+
+    output += std::format("\n########################################################\n\n");
+
+    cout << output;
 }
 
 
