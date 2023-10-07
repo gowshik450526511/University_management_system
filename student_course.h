@@ -57,18 +57,18 @@ void studentcourse::get_courses()
 
     grades.resize(no_of_semesters, std::vector<float>(number_of_courses));
 
-    for(int i=0;i<no_of_semesters;i++)
+    for (int semesterIndex = 0; semesterIndex < no_of_semesters; semesterIndex++)
     {
-        cout<<"\n\nSEMESTER:"<<setw(15)<<i+1<<"\n\n";
-        sem[i].get_semester_fees_details();
-
-        for(int i=0;i<number_of_courses;i++)
+        cout << std::format("\n\nSEMESTER:{:<15}\n\n", semesterIndex + 1);
+        sem[semesterIndex].get_semester_fees_details();
+    
+        for (int courseIndex = 0; courseIndex < number_of_courses; courseIndex++)
         {
-            cout<<"\n\nCOURSE:"<<setw(15)<<i+1<<"\n\n";
-            c[i].get_course_details(1);
-            cout<<"\n\nENTER THE GRADE OF STUDENT OF THAT COURSE:";
-            cin>>grades[i];
-            co<<grades[i];
+            cout << std::format("\n\nCOURSE:{:<15}\n\n", courseIndex + 1);
+            c[courseIndex].get_course_details(1);
+            cout << "\n\nENTER THE GRADE OF STUDENT OF THAT COURSE:";
+            cin >> grades[courseIndex];
+            co << grades[courseIndex];
         }
     }
     co<<"\n\n"<<get_grade();
@@ -77,18 +77,18 @@ void studentcourse::get_courses()
 }
 void studentcourse::print_student_course_details()
 {
-    for(int i=0;i<no_of_semesters;i++)
+    for(int semesterIndex = 0; semesterIndex < no_of_semesters; semesterIndex++)
     {
-        cout<<"\n\n"<<setw(40)<<"SEMESTER:"<<setw(10)<<i+1<<"\n\n";
-        sem[i].print_semester_fees_details();
-
-        for(int i=0;i<number_of_courses;i++)
+        cout << std::format("\n\n{:<40}SEMESTER:{:<10}\n\n", "", semesterIndex + 1);
+        sem[semesterIndex].print_semester_fees_details();
+    
+        for(int courseIndex = 0; courseIndex < number_of_courses; courseIndex++)
         {
-            cout<<"\n\n\n"<<setw(40)<<"COURSE DETAILS"<<"\n\n";
-            c[i].print_course_details();
-            cout<<"\n\n\n##################################################"<<"\n";
-            cout<<"\n\nCGPA OF STUDENT:"<<setw(15)<<cgpa<<"\t"<<"\n\n";
-            cout<<"##################################################"<<"\n\n";
+            cout << std::format("\n\n{:<40}COURSE DETAILS\n\n", "");
+            c[courseIndex].print_course_details();
+            cout << "\n\n\n##################################################\n";
+            cout << std::format("\nCGPA OF STUDENT:{:<15}\t\n\n", cgpa);
+            cout << "##################################################\n\n";
         }
     }
 }
