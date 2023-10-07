@@ -4,14 +4,13 @@
 #include "semester_info.h"
 #include "course.h"
 
-using namespace std;
-
 class studentcourse
 {
     private:
         float cgpa;
         vector<float>grades(10);
-        int no_of_semesters,number_of_courses;
+        int no_of_semesters;
+        int number_of_courses;
         course *c;
         semester_fee *sem;
 
@@ -23,19 +22,20 @@ class studentcourse
 
 float studentcourse::get_grade()
 {
-        float sum_numerator=0,sum_credit=0;
-        for(int i=0;i<no_of_semesters;i++)
+        float sum_numerator=0.0;
+        float sum_credit=0.0;
+        for (int semester = 0; semester < no_of_semesters; semester++)
         {
-            for(int i=0;i<number_of_courses;i++)
+            for (int course_index = 0; course_index < number_of_courses; course_index++)
             {
-                sum_credit+=(c+i)->get_credit();
+                sum_credit += (c + course_index)->get_credit();
             }
-            for(int i=0;i<number_of_courses;i++)
+            for (int course_index = 0; course_index < number_of_courses; course_index++)
             {
-                sum_numerator+=((c+i)->get_credit())*grades[i];
+                sum_numerator += ((c + course_index)->get_credit()) * grades[course_index];
             }
         }
-        cgpa=sum_numerator/sum_credit;
+        cgpa = sum_numerator / sum_credit;
         return cgpa;
 }
 void studentcourse::get_courses()
@@ -51,9 +51,11 @@ void studentcourse::get_courses()
 
     co<<"\n\n"<<no_of_semesters<<"\t\t"<<number_of_courses<<"\t\t";
 
-    sem=new semester_fee[no_of_semesters];
+    sem.resize(no_of_semesters);
 
-    c=new course[number_of_courses];
+    courses.resize(number_of_courses);
+
+    grades.resize(no_of_semesters, std::vector<float>(number_of_courses));
 
     for(int i=0;i<no_of_semesters;i++)
     {
