@@ -37,7 +37,7 @@ public:
         s->get_courses();
     }
 
-    void print_details()
+    void print_details() final
     {
         // Use std::format for advanced formatting
         string output = std::format("\n\n\nNAME:{:<20}AGE:{:<20}PHONE:{:<20}EMAIL:{:<20}STREET:{:<20}CITY:{:<20}STATE:{:<20}COUNTRY:{:<20}POSTAL CODE:{}\n",
