@@ -42,19 +42,17 @@ void hostel::total_fee()
     total_fees=room_fee+mess_fee;
 }
 
+
 void hostel::print_hostel_details() const
 {
     // Use std::format for advanced formatting
     string output = std::format("\n\n\n\n######################{:<15}HOSTEL DETAILS{:<15}##################################\n\n", "");
-
     output += std::format("\n\nROOM NO:{:<20}ROOM FEE:{:<20}MESS FEE:\n\n", room_no, room_fee, mess_fee);
-
     output += std::format("\n\n\nTOTAL FEES{:<20}\n\n", total_fees);
-
     output += std::format("\n########################################################\n\n");
-
     cout << output;
 }
+
 
 
 
