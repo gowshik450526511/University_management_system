@@ -4,8 +4,6 @@
 
 #include <iomanip>
 
-using namespace std;
-
 class semester_fee
 {
 
@@ -50,12 +48,16 @@ void semester_fee::get_semester_fees_details()
     semester_fee.close();
 }
 
-void semester_fee::print_semester_fees_details()
-{
-    cout<<"\n\n####################################################################################################################################\n\n";
-    cout<<"\nTUTION FEES:"<<setw(20)<<"EXAMINATION FEES:"<<setw(30)<<"LIBRARY AND COMPUTER FEES:"<<setw(25)<<"ANNA UNIVERSITY FEES:"<<setw(30)<<"MARK SHEET COST FEES:"<<setw(25)<<"TOTAL SEMESTER FEES:"<<"\n\n";
-    cout<<tution_fees<<setw(20)<<examination_fees<<setw(25)<<library_computer_fees<<setw(25)<<anna_university_fees<<setw(25)<<mark_sheet_cost_fees<<setw(25)<<total_semester_fees<<"\n\n";
-    cout<<"\n######################################################################################################################################\n\n";
+void semester_fee::print_semester_fees_details() const
+{ 
+    cout << std::format("\n\n{:<100}\n\n", "####################################################################################################################################");
+    cout << std::format("\n{:<20}{:<20}{:<30}{:<25}{:<30}{:<25}{:<25}\n\n",
+                        "TUTION FEES:", "EXAMINATION FEES:", "LIBRARY AND COMPUTER FEES:",
+                        "ANNA UNIVERSITY FEES:", "MARK SHEET COST FEES:", "TOTAL SEMESTER FEES:");
+    cout << std::format("\n{:<20}{:<20}{:<30}{:<25}{:<30}{:<25}{:<25}\n\n",
+                        tution_fees, examination_fees, library_computer_fees,
+                        anna_university_fees, mark_sheet_cost_fees, total_semester_fees);
+    cout << std::format("\n{:<100}\n\n", "######################################################################################################################################");
 }
 
 
