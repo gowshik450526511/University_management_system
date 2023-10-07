@@ -9,8 +9,7 @@ using namespace std;
 class studentcourse
 {
     private:
-        float cgpa;
-        vector<float> grades(10);
+        float cgpa, grades[10];
         int no_of_semesters,number_of_courses;
         course *c;
         semester_fee *sem;
