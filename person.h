@@ -1,3 +1,4 @@
+#include<bits/stdc++.h>
 #include<iostream>
 #include<fstream>
 using namespace std;
@@ -6,7 +7,15 @@ class person
 {
 
     protected:
-            char name[100],age[100],phone_no[100],email_id[100],street_name[100],city[100],state[100],country[100],postal_code[100];
+            string name;
+            string age;
+            string phone_no;
+            string email_id;
+            string street_name;
+            string city;
+            string state;
+            string country;
+            string postal_code;
 
 
     public:
