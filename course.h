@@ -55,9 +55,9 @@ class course
         
         void print_course_details() const
         {
-            cout << "\nNAME:" << setw(15) << name << "\n\n";
-            cout << "\nCODE:" << setw(15) << code << "\n\n";
-            cout << "\nCREDIT:" << setw(15) << credit << "\n\n";
+            cout << std::format("\nNAME:{:<15}\n\n", name);
+            cout << std::format("\nCODE:{:<15}\n\n", code);
+            cout << std::format("\nCREDIT:{:<15}\n\n", credit);
         }
 
 };
